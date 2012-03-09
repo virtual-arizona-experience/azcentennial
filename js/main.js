@@ -45,8 +45,8 @@ function setupCalendar(map) {
 		// Classes are taken care of, now for the GeoJSON
 		map.removeLayer(currentWfsLayer.jsonLayer);		
 		
-		var start = new Date($("#current-year").html() + $(this).attr("id"));
-		var end = new Date($("#current-year").html() + $(this).attr("id"));
+		var start = new Date([$(this).html(), "01", $("#current-year").html(), "00:00:00"].join(" "));
+		var end = new Date([$(this).html(), "01", $("#current-year").html(), "00:00:00"].join(" "));
 		end.setMonth(end.getMonth() + 1);
 		
 		var theFilter = new DateFilter("timedate", start, end);
