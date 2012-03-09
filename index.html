@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Arizona Centennial</title>
+		<link rel="stylesheet" type="text/css" href="style/leaflet.css" />
+		<link rel="stylesheet/less" type="text/css" href="style/calendar.less" />		
+		<link rel="stylesheet/less" type="text/css" href="style/popup.less" />
+		<script type="application/javascript" src="js/leaflet-custom.js"></script>
+		<script type="application/javascript" src="js/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="js/less-1.2.2.min.js"></script>
+		<script type="application/javascript" src="js/jade.js"></script>
+		<script type="application/javascript" src="proj4js-1.0.3/lib/proj4js-compressed.js"></script>
+		<script type="application/javascript" src="js/PopupContent.js"></script>
+		<script type="application/javascript" src="js/DateFilter.js"></script>
+		<script type="application/javascript" src="js/GeoserverWfsLayer.js"></script>		
+		<script type="application/javascript" src="js/main.js"></script>
+		<script type="application/javascript">			
+						
+		</script>
+	</head>
+	<body onload="init()">
+		<div id="map" style="height: 500px"></div>		
+		<div id="calendar">
+			<div id="current-year" class="year-switcher">2012</div>
+			<ul id="months">
+				<li id="back-year" class="year-switcher">2011</li>
+				<li id="-01-01T00:00:00-0700" class="first month">Jan</li>
+				<li id="-02-01T00:00:00-0700" class="month">Feb</li>
+				<li id="-03-01T00:00:00-0700" class="month">Mar</li>
+				<li id="-04-01T00:00:00-0700" class="month">Apr</li>
+				<li id="-05-01T00:00:00-0700" class="month">May</li>
+				<li id="-06-01T00:00:00-0700" class="month">Jun</li>
+				<li id="-07-01T00:00:00-0700" class="month">Jul</li>
+				<li id="-08-01T00:00:00-0700" class="month">Aug</li>
+				<li id="-09-01T00:00:00-0700" class="month">Sep</li>
+				<li id="-10-01T00:00:00-0700" class="month">Oct</li>
+				<li id="-11-01T00:00:00-0700" class="month">Nov</li>
+				<li id="-12-01T00:00:00-0700" class="month">Dec</li>
+				<li id="forward-year" class="year-switcher">2013</li>
+			</ul>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,73 @@
+@cal-background: #718F68;//#B9B9B9;
+@inner:  0px 0px 5px 2px lighten(@cal-background, 50%);
+@shrinker: 47%;
+
+.innerize() {
+  -webkit-box-shadow: @inner;
+  -moz-box-shadow: @inner;
+  box-shadow: @inner;
+}
+
+.select(@ligther: 0%) {
+  cursor: pointer;
+  outline: 3px solid white;
+  background-color: lighten(@cal-background, @ligther);  
+}
+
+.box-padding() {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+body {
+  text-align: center;
+}
+#calendar {
+  position: relative;
+  z-index: 20;
+  top: -70px;
+  font-family: sans-serif;
+  font-size: 14px;
+  .year-switcher {
+    color: darken(@cal-background, 20%);
+  }
+  .first {
+    border: none;
+  }  
+  #current-year {
+    .box-padding();
+    .innerize();
+    margin-left: @shrinker;
+    margin-right: @shrinker;
+    background-color: @cal-background;
+    color: white;
+    font-weight: bold;    
+    border-radius: 5px;
+    text-shadow: 0px 1px 1px darken(@cal-background, 20%);
+  }
+  ul {
+    list-style-type: none;
+    padding: 0px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 5px;
+    background-color: @cal-background;
+    .innerize();
+    li {
+      .box-padding();
+      display: inline-block;      
+      color: darken(@cal-background, 40%);  
+      text-shadow: 0px 1px 1px lighten(@cal-background, 20%);
+      &:hover {
+        .select();     
+      }
+      &.selected {
+        .select(10%);
+      }
+    }
+  }
+}
+
+
