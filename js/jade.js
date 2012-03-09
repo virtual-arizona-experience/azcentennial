@@ -1186,7 +1186,7 @@ Lexer.prototype = {
    * While.
    */
   
-  while: function() {
+  "while": function() {
     var captures;
     if (captures = /^while +([^\n]+)/.exec(this.input)) {
       this.consume(captures[0].length);
