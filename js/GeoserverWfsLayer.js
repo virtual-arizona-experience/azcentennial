@@ -31,8 +31,8 @@ GeojsonWfsLayer.prototype.toGeographicCoords = function() {
 		return [p.x, p.y];
 	}
 	
-	features = this.jsonData.features;
-	for (var f in features || []) {
+	features = this.jsonData.features || [];
+	for (var f = 0; f < features.length; f++) {
 		switch (features[f].geometry.type) {
 			case "Point":
 				projectedCoords = projectPoint(features[f].geometry.coordinates);
@@ -60,13 +60,6 @@ GeojsonWfsLayer.prototype.getFeature = function(callback) {
 		},
 		dataType: "json"
 	});
-	
-	/*$.get(this.getFeatureUrl, function(response) {
-		//that.jsonData = typeof response == "string" ? JSON.parse(response) : response;
-		that.jsonData = response;
-		that.toGeographicCoords();
-		callback();
-	}, "json");*/
 };
 
 GeojsonWfsLayer.prototype.filterByDate = function(filter) {
