@@ -6,7 +6,7 @@ GeojsonWfsLayer = function(serviceUrl, featureType, popupObj, filter) {
 	    pointToLayer: function (latlng) {
 	        return new L.Marker(latlng, {
 			    icon: new L.Icon({ 
-			    	iconUrl: "./style/images/celebrate.svg",
+			    	iconUrl: "./style/images/celebrate.png",
 			    	iconSize: new L.Point(70,70)
 			    })
 			});
