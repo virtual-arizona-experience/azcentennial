@@ -13,7 +13,7 @@ GeojsonWfsLayer = function(serviceUrl, featureType, popupObj, filter) {
 	    }
 	});
 	this.jsonLayer.on("featureparse", function(e) {
-		if (e.properties) {
+		if (e.properties && popupObj) {
 			e.layer.bindPopup(popupObj.generatePopupContent(e), popupObj.options);
 		}
 	});
