@@ -1112,7 +1112,7 @@ Lexer.prototype = {
    * Extends.
    */
   
-  extends: function() {
+  "extends": function() {
     return this.scan(/^extends +([^\n]+)/, 'extends');
   },
 
