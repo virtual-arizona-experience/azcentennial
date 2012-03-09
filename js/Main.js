@@ -42,7 +42,6 @@ function setupCalendar(map) {
 		$(this).parent("ul").children("li").each(function() { $(this).removeClass("selected"); });
 		$(this).addClass("selected");
 		
-		// Classes are taken care of, now for the GeoJSON
 		map.removeLayer(currentWfsLayer.jsonLayer);		
 		
 		var start = new Date([$(this).html(), "01", $("#current-year").html(), "00:00:00"].join(" "));
