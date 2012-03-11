@@ -18,6 +18,9 @@ function init(){
 	var historicUrl = "http://opengis.azexperience.org/tiles/v2/azHistoric1880/{z}/{x}/{y}.png",
 		historicLayer = new L.TileLayer(historicUrl, {maxZoom: 10}); */
 	
+	var bingLayer = new L.TileLayer.Bing("Ag_G9YGvTnWtqqSsQ5S4s44ddrRS7GmC7WO94Vo-NoL_p1TiWdwsYcIDirB3_5q-", "Road", {});
+	
+	
 	var	baseurl = "http://services.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}.png",
 		baseattrib = "National Geographic, Esri, DeLorme, NAVTEQ",
 		baseLayer = new L.TileLayer(baseurl, {maxZoom: 16, attribution: baseattrib});
@@ -25,7 +28,7 @@ function init(){
 	var wfsLayer = currentWfsLayer = new GeojsonWfsLayer(wfsUrl, featureTypeName, popupContent);
 	
 	var center = new L.LatLng(34.1618, -111.53332);
-	map.setView(center, 7).addLayer(baseLayer);
+	map.setView(center, 7).addLayer(bingLayer);
 	wfsLayer.addToMap(map);											
 }
 
