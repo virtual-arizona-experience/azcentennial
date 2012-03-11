@@ -6,7 +6,7 @@ var popupContent = new PopupContent("templates/popup.jade", function(feature) {
 		date: feature.properties.first_displaydate,
 		location: feature.properties.first_city,
 		details: feature.properties.first_description
-	}
+	};
 }, { maxWidth: 600 });
 currentWfsLayer = null;
 
@@ -18,13 +18,12 @@ function init(){
 	var historicUrl = "http://opengis.azexperience.org/tiles/v2/azHistoric1880/{z}/{x}/{y}.png",
 		historicLayer = new L.TileLayer(historicUrl, {maxZoom: 10}); */
 	
-	var bingLayer = new L.TileLayer.Bing("Ag_G9YGvTnWtqqSsQ5S4s44ddrRS7GmC7WO94Vo-NoL_p1TiWdwsYcIDirB3_5q-", "Road", {});
-	
-	
+	/* ESRI tiled service accessibility
 	var	baseurl = "http://services.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}.png",
 		baseattrib = "National Geographic, Esri, DeLorme, NAVTEQ",
-		baseLayer = new L.TileLayer(baseurl, {maxZoom: 16, attribution: baseattrib});
+		baseLayer = new L.TileLayer(baseurl, {maxZoom: 16, attribution: baseattrib}); */
 	
+	var bingLayer = new L.TileLayer.Bing("Ag_G9YGvTnWtqqSsQ5S4s44ddrRS7GmC7WO94Vo-NoL_p1TiWdwsYcIDirB3_5q-", "Road", {});
 	var wfsLayer = currentWfsLayer = new GeojsonWfsLayer(wfsUrl, featureTypeName, popupContent);
 	
 	var center = new L.LatLng(34.1618, -111.53332);
