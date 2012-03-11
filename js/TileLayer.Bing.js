@@ -22,7 +22,9 @@ L.TileLayer.Bing = L.TileLayer.extend({
   _loadMetadata: function() {
     
     this._callbackId = "_l_tilelayer_bing_" + (L.TileLayer.Bing._callbackId++);
-    window[this._callbackId] = L.Util.bind(L.TileLayer.Bing.processMetadata, this);
+    //window[this._callbackId] = L.Util.bind(L.TileLayer.Bing.processMetadata, this);
+    that = this;
+    window[this._callbackId] = function() { L.TileLayer.Bing.processMetadata.apply(that, arguments); };
     
     var params = {
       key: this._apiKey,
