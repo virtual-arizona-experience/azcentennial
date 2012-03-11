@@ -23,7 +23,7 @@ function init(){
 		baseattrib = "National Geographic, Esri, DeLorme, NAVTEQ",
 		baseLayer = new L.TileLayer(baseurl, {maxZoom: 16, attribution: baseattrib}); */
 	
-	var bingLayer = new L.TileLayer.Bing("Ag_G9YGvTnWtqqSsQ5S4s44ddrRS7GmC7WO94Vo-NoL_p1TiWdwsYcIDirB3_5q-", "Road", {});
+	var bingLayer = new L.TileLayer.Bing("Ag_G9YGvTnWtqqSsQ5S4s44ddrRS7GmC7WO94Vo-NoL_p1TiWdwsYcIDirB3_5q-", "Road");
 	var wfsLayer = currentWfsLayer = new GeojsonWfsLayer(wfsUrl, featureTypeName, popupContent);
 	
 	var center = new L.LatLng(34.1618, -111.53332);

@@ -16,7 +16,7 @@ L.TileLayer.Bing = L.TileLayer.extend({
     
     this._loadMetadata();
     
-    L.Util.setOptions(this, options);
+    L.Util.setOptions(this, options || {});
   },
   
   _loadMetadata: function() {
