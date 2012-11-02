@@ -1,4 +1,4 @@
-var wfsUrl = "http://opengis.azexperience.org/geoserver/wfs";
+var wfsUrl = "/geoserver/wfs";
 var featureTypeName = "vae:azcentennial";
 var popupContent = new PopupContent("templates/popup.jade", function(feature) {
 	return {
